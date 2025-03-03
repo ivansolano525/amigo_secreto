@@ -33,7 +33,7 @@ function shuffleArray(amigos) {
     }
     return amigos;
 }
-// Function to ensure no participant is assigned to themselves
+// Function para sortear amigos asegurandose que no pueda ser tu mismo el amigo secreto y que el listado sea par
 function sortearAmigo() {
     if (amigos.length % 2 !== 0) {
         alert("Por favor agregue un participante mas para hacer la lista par.");
@@ -52,17 +52,8 @@ function sortearAmigo() {
     }));
 
     actualizarlistaresultados(assignments);}
-// Function to asignar los amigos secretos de manera aleatoria
-/*function sortearAmigo() {
-    const shuffled = shuffleArray(amigos.slice());
-    const assignments = amigos.map((amigos, index) => ({
-        amigos,
-        amigoSecreto: shuffled[index]
-    }));
 
-    actualizarlistaresultados(assignments);
-}*/
-// Function to update the result list displayed on the webpage
+// Function para mostrar la lista de resultados en la pagina web
 function actualizarlistaresultados(assignments) {
     const resultList = document.getElementById('resultado');
     resultList.innerHTML = '';
